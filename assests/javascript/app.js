@@ -3,32 +3,17 @@ var animals = [
     "cat",
     "rabbit",
     "hamster",
-    "skunk",
-    "goldfish",
-    "bird",
-    "ferret",
     "turtle",
-    "sugar glider",
-    "chinchilla",
-    "hedgehog",
-    "hermit crab",
-    "gerbil",
-    "pygmy goat",
-    "chicken",
-    "capybara",
-    "teacup pig",
     "serval",
-    "salamander",
-    "frog"
   ];
   
   function displayAnimalGifs() {
     var animal = $(this).attr("data-animal");
-    
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=Ke34Nu04XKYltBLaVn2mKrtZdR4BG4Ie&limit=10";
     
     $.ajax({
-      url: queryURL,
+      url: proxyurl + queryURL,
       method: "GET"
     }).then(function(response) {
       
